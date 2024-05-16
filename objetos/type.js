@@ -9,5 +9,8 @@
         name: 'Barry Allen',
         age: 24,
         power: ['Super velocidad', 'Viajar en el tiempo'],
+        superPower() {
+            return this.name;
+        }
     };
 })();

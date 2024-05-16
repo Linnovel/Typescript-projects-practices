@@ -1,17 +1,18 @@
 (() => {
-    let flash = {
+    let flash:{ name:string, age:number, power:string[], superPower?:() => string} = {
         name: 'Barry Allen',
         age: 24,
-        power:['Super velocidad', 'Viajar en el tiempo']
+        power:['Super velocidad', 'Viajar en el tiempo'],
     }
 
-    flash = {
-        name: 'Superman',
-        age: 60,
-        power: ['super fuerza'],
-        getNombre(){
-            this.name
-        }
+
+    let superman:{ name:string, age?:number, power:string[], superPower?:() => string} = {
+        name: 'Barry Allen',
+        age: 24,
+        power:['Super velocidad', 'Viajar en el tiempo'],
     }
+    
+
+
 
 })()
