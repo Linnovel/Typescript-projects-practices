@@ -1,49 +1,69 @@
 "use strict";
 (() => {
-    //destructuring de objetos
-    const avengers = {
-        nick: 'samuel j',
-        ironMan: 'Robert D',
-        vision: 'paul Bettany',
-        activos: true,
-        poder: 1500
-    };
-    // const {nick, poder, vision} = avengers;
-    // console.log({nick, poder}, vision.toUpperCase());
-    // const printAvegners = ({nick, ...rest}:Avengers) => {
-    //     console.log(nick, rest);
-    // }
-    // printAvegners(avengers)
-    //!destructurarion de arrays
-    const avengersArr = ['Cap', 'IronMan', 'Hulk'];
-    const [first, , third] = avengersArr;
-    // console.log(first, third);
-})();
-(() => {
-    const ironman = {
-        nombre: 'Tony startk',
-        weapong: 'Armor Suit'
-    };
-    const capAmerica = {
-        nombre: 'Capitan America',
-        weapong: 'Shield'
-    };
-    const thor = {
-        nombre: 'Thor',
-        weapong: 'Hammer'
-    };
-    const avengers = [ironman, capAmerica, thor];
-    for (const iterator of avengers) {
-        console.log(iterator.nombre, iterator.weapong);
+    class Mutante {
+        constructor(name, realName) {
+            this.name = name;
+            this.realName = realName;
+        }
     }
+    class Xmen extends Mutante {
+        salvarMundo() {
+            return 'todo en orden';
+        }
+    }
+    class Villan extends Mutante {
+        matarHumanos() {
+            return 'matarlos a todos';
+        }
+    }
+    const wolwerine = new Xmen('Wolwerine', 'Logan');
+    const magneto = new Villan('MAgneto', 'Magnus');
+    // console.log(wolwerine.salvarMundo());
+    // console.log(magneto.matarHumanos());
 })();
 (() => {
-    const nombre = 'Luis';
-    const getName = () => {
-        console.log('nombre viejo');
-    };
-    // getName = () => {console.log('nombre nuevo');
-    // }
-    // getName()
+    class Avengers {
+        constructor(name, team, realName) {
+            this.name = name;
+            this.team = team;
+            this.realName = realName;
+        }
+        //metodhs
+        bio() {
+            return `${this.name} ${this.team}`;
+        }
+    }
+    const antman = new Avengers('Antman', 'cap', 'paul rudd');
+    //  console.log(antman.bio());
+})();
+(() => {
+    class Avenger {
+        constructor(name, realName) {
+            this.name = name;
+            this.realName = realName;
+            // console.log('constructor Avenger llamado!')
+        }
+        //method o function method
+        getFullName() {
+            return `${this.name} ${this.realName}`;
+        }
+    }
+    class Xmen extends Avenger {
+        get fullName() {
+            return `${this.name} ${this.realName}`;
+        }
+        set fullName(name) {
+            if (name.length < 3) {
+                throw new Error(' el nombre debe ser mayor de tres');
+            }
+            this.name = name;
+        }
+    }
+    const wolwerine = new Xmen('Logan', 'Xmen');
+    // console.log(wolwerine.fullName);
+    wolwerine.fullName = 'Luis';
+    // console.log(wolwerine.fullName);
+})();
+(() => {
 })();
 //# sourceMappingURL=main.js.map
