@@ -1,69 +1,60 @@
 "use strict";
 (() => {
-    class Mutante {
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
+    let flash = {
+        name: 'Barry Allen',
+        age: 24,
+        power: ['Super velocidad', 'Viajar en el tiempo'],
+    };
+    let superman = {
+        name: 'Barry Allen',
+        age: 24,
+        power: ['Super velocidad', 'Viajar en el tiempo'],
+        superPower() {
+            return this.name;
         }
-    }
-    class Xmen extends Mutante {
-        salvarMundo() {
-            return 'todo en orden';
-        }
-    }
-    class Villan extends Mutante {
-        matarHumanos() {
-            return 'matarlos a todos';
-        }
-    }
-    const wolwerine = new Xmen('Wolwerine', 'Logan');
-    const magneto = new Villan('MAgneto', 'Magnus');
-    // console.log(wolwerine.salvarMundo());
-    // console.log(magneto.matarHumanos());
+    };
 })();
 (() => {
-    class Avengers {
-        constructor(name, team, realName) {
-            this.name = name;
-            this.team = team;
-            this.realName = realName;
-        }
-        //metodhs
-        bio() {
-            return `${this.name} ${this.team}`;
-        }
-    }
-    const antman = new Avengers('Antman', 'cap', 'paul rudd');
-    //  console.log(antman.bio());
+    // class Mutant implements Xmen, Human {
+    //     public age:number;
+    //     public name:string
+    //     public realName: string;
+    //     mutantPower(id:number)  {
+    //         return this.age + '' + this.realName
+    //     }
+    // }
 })();
 (() => {
-    class Avenger {
-        constructor(name, realName) {
-            this.name = name;
-            this.realName = realName;
-            // console.log('constructor Avenger llamado!')
-        }
-        //method o function method
-        getFullName() {
-            return `${this.name} ${this.realName}`;
-        }
-    }
-    class Xmen extends Avenger {
-        get fullName() {
-            return `${this.name} ${this.realName}`;
-        }
-        set fullName(name) {
-            if (name.length < 3) {
-                throw new Error(' el nombre debe ser mayor de tres');
-            }
-            this.name = name;
-        }
-    }
-    const wolwerine = new Xmen('Logan', 'Xmen');
-    // console.log(wolwerine.fullName);
-    wolwerine.fullName = 'Luis';
-    // console.log(wolwerine.fullName);
+    const client = {
+        name: 'Luis Linares',
+        age: 35,
+        address: {
+            id: 123,
+            zip: '12312',
+            city: 'Caracas'
+        },
+        getFullAddress(id) {
+            return this.address.city;
+        },
+    };
+    const client2 = {
+        name: 'Mellisa',
+        age: 30,
+        address: {
+            city: 'adaw',
+            zip: 'awd',
+            id: 32
+        },
+        getFullAddress() {
+            return this.age;
+        },
+    };
 })();
 (() => {
+    ;
+    let addNumbersFunctions;
+    addNumbersFunctions = (a, b) => {
+        return a + b;
+    };
 })();
 //# sourceMappingURL=main.js.map
